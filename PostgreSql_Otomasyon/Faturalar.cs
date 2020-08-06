@@ -64,14 +64,16 @@ namespace PostgreSql_Otomasyon
         void urunListesi()
         {
             dt = new DataTable();
-            sql = @"Select id,ad from urunler";
+            sql = @"Select id,ad,model from urunler";
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql,bgl.baglanti());
             da.Fill(dt);
             lkeUrunAd.Properties.ValueMember = "id";
             lkeUrunAd.Properties.DisplayMember = "ad";
+            lkeUrunAd.Properties.DisplayMember = "model";
             lkeUrunAd.Properties.DataSource = dt;
             lkeUrunAd2.Properties.ValueMember = "id";
             lkeUrunAd2.Properties.DisplayMember = "ad";
+            lkeUrunAd2.Properties.DisplayMember = "model";
             lkeUrunAd2.Properties.DataSource = dt;
         }
 
@@ -183,7 +185,7 @@ namespace PostgreSql_Otomasyon
 
         private void btnBul_Click(object sender, EventArgs e)
         {
-            sql = @"Select id,satisfiyat,adet from urunler where ad=@p1";
+            sql = @"Select id,satisfiyat,adet from urunler where model=@p1";
             cmd = new NpgsqlCommand(sql, bgl.baglanti());
             cmd.Parameters.AddWithValue("@p1", lkeUrunAd.Text);
             NpgsqlDataReader dr = cmd.ExecuteReader();
@@ -198,7 +200,7 @@ namespace PostgreSql_Otomasyon
 
         private void btnBul2_Click(object sender, EventArgs e)
         {
-            sql = @"Select id,satisfiyat,adet from urunler where ad=@p1";
+            sql = @"Select id,satisfiyat,adet from urunler where model=@p1";
             cmd = new NpgsqlCommand(sql, bgl.baglanti());
             cmd.Parameters.AddWithValue("@p1", lkeUrunAd2.Text);
             NpgsqlDataReader dr = cmd.ExecuteReader();

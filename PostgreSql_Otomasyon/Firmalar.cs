@@ -170,5 +170,20 @@ namespace PostgreSql_Otomasyon
             gridControl1.DataSource = dt;
             bgl.baglanti().Close();
         }
+
+        private void cmbil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbİlce.Properties.Items.Clear();
+            bgl.baglanti();
+            sql = @"select countyname from counties where  cityid=@p1";
+            cmd = new NpgsqlCommand(sql, bgl.baglanti());
+            cmd.Parameters.AddWithValue("@p1", cmbil.SelectedIndex + 1);
+            NpgsqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cmbİlce.Properties.Items.Add(dr[0]);
+            }
+            bgl.baglanti().Close();
+        }
     }
 }
