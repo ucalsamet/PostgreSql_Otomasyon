@@ -289,6 +289,7 @@ namespace PostgreSql_Otomasyon
                     cmd1.Parameters.AddWithValue("@h8", mskTarih.Text);
                     cmd1.ExecuteNonQuery();
                     bgl.baglanti().Close();
+                     
                 }
             }
         }
