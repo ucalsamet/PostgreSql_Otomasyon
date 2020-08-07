@@ -114,6 +114,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGiris.Designer.cs">
+      <DependentUpon>AdminGiris.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anamodul.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,12 +156,6 @@
     </Compile>
     <Compile Include="Giderler.Designer.cs">
       <DependentUpon>Giderler.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Giris.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giris.Designer.cs">
-      <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
     <Compile Include="Hareketler.cs">
       <SubType>Form</SubType>
@@ -213,6 +213,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminGiris.resx">
+      <DependentUpon>AdminGiris.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Anamodul.resx">
       <DependentUpon>Anamodul.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,9 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Giderler.resx">
       <DependentUpon>Giderler.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Giris.resx">
-      <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hareketler.resx">
       <DependentUpon>Hareketler.cs</DependentUpon>

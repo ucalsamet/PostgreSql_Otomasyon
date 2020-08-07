@@ -1,28 +1,29 @@
-﻿using Npgsql;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using Npgsql;
 
 namespace PostgreSql_Otomasyon
 {
-    public partial class Giris : Form
+    public partial class AdminGiris : DevExpress.XtraEditors.XtraForm
     {
-        public Giris()
+        public AdminGiris()
         {
             InitializeComponent();
         }
         connect bgl = new connect();
         private string sql;
         private NpgsqlCommand cmd;
-        private DataTable dt;
-        private void Giris_Load(object sender, EventArgs e)
+        private void AdminGiris_Load(object sender, EventArgs e)
         {
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
