@@ -72,16 +72,6 @@ namespace PostgreSql_Otomasyon
                 bgl.baglanti().Close();
                 listele();
                 bgl.baglanti();
-
-                sql = @"insert into stoklar(stoktur,stokadet,urunid) values (@p1,@p2,@p3)";
-                cmd = new NpgsqlCommand(sql, bgl.baglanti());
-                cmd.Parameters.AddWithValue("@p1", txtUrunad.Text);
-                cmd.Parameters.AddWithValue("@p2", int.Parse(txtAdet.Text.ToString()));
-                cmd.Parameters.AddWithValue("@p3", int.Parse(txtId.Text));
-                cmd.ExecuteNonQuery();
-                bgl.baglanti().Close();
-                listele();
-
             }
             catch (Exception ex)
             {
